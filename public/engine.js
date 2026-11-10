@@ -1,0 +1,10 @@
+export const locations=['Library','Engineering block','Student centre','Main gate'];
+export function analyze(text){
+ const rules=[['AccessPath',/ramp|lift|wheelchair|stairs|accessib|blocked/i],['RepairRoute',/broken|repair|leak|light|damage|fault/i],['LabLoop',/component|sensor|arduino|circuit|reuse|electronic/i],['Notice2Action',/deadline|submit|registration|workshop|notice/i]];
+ const modules=rules.filter(([,r])=>r.test(text)).map(([m])=>m);
+ return {modules:modules.length?modules:['RepairRoute'],location:locations.find(l=>text.toLowerCase().includes(l.toLowerCase()))||'Location needs confirmation',urgency:/sparks|fire|exposed wire|smoke/i.test(text)?'Urgent review':'Routine review',evidence:text.trim(),dates:[...text.matchAll(/\b\d{1,2}[ /-](?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?|\d{1,2})(?:[ /-]\d{4})?\b/gi)].map(m=>m[0])};
+}
+export function route(blocked){return blocked?{nodes:['Main gate','Student centre','Library'],distance:460,note:'Step-free east path avoids Engineering block.'}:{nodes:['Main gate','Engineering block','Library'],distance:280,note:'Direct step-free path through Engineering block.'};}
+export function redact(t){return t.replace(/[\w.+-]+@[\w.-]+\.[a-z]{2,}/gi,'[email removed]').replace(/(?:\+?\d[\d ()-]{8,}\d)/g,'[phone removed]');}
+export const recipes=[{name:'Desk environment monitor',parts:['Arduino','Temperature sensor','USB cable'],description:'Read temperature and display serial readings.'},{name:'Light-aware study lamp',parts:['Arduino','Light sensor','LED','Resistor','USB cable'],description:'Adjust a low-voltage LED based on ambient light.'},{name:'Accessible push-button alert',parts:['Arduino','Push button','LED','Resistor','USB cable'],description:'Trigger a visible signal with a large button.'}];
+export function matchRecipes(stock){return recipes.map(r=>({...r,available:r.parts.filter(p=>stock[p]>0),missing:r.parts.filter(p=>!(stock[p]>0))})).sort((a,b)=>a.missing.length-b.missing.length);}

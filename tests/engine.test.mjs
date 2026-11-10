@@ -1,0 +1,7 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {analyze,route,redact,matchRecipes} from '../public/engine.js';
+test('one issue links accessibility, repair and reuse with original evidence',()=>{const t='Engineering block ramp blocked by broken electronics cart with Arduino components';const a=analyze(t);assert.deepEqual(a.modules,['AccessPath','RepairRoute','LabLoop']);assert.equal(a.evidence,t);assert.equal(a.location,'Engineering block')});
+test('route changes when barrier cleared',()=>{assert.ok(route(true).distance>route(false).distance);assert.ok(!route(true).nodes.includes('Engineering block'))});
+test('redacts email and phone without changing ordinary source text',()=>assert.equal(redact('Email demo@example.com or +91 98765 43210. I saw a broken desk.'),'Email [email removed] or [phone removed]. I saw a broken desk.'));
+test('inventory matching never offers missing components as available',()=>{const r=matchRecipes({Arduino:1,'USB cable':1,'Temperature sensor':0});assert.ok(r.every(x=>x.missing.length));assert.ok(r.find(x=>x.name==='Desk environment monitor').missing.includes('Temperature sensor'))});
+test('ambiguous locations remain unconfirmed and unknown text has no invented date',()=>{const a=analyze('Please help with a problem');assert.equal(a.location,'Location needs confirmation');assert.deepEqual(a.dates,[])});
+test('all source dates retained for conflict review',()=>assert.deepEqual(analyze('Register 11 November 2026. Attend 12 November 2026.').dates,['11 November 2026','12 November 2026']));
