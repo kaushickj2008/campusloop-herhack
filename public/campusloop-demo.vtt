@@ -1,0 +1,41 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:11.036
+Campus Loop connects five everyday campus needs in one student workspace. This walkthrough uses actual captured states from the working application. with synthetic demonstration data.
+
+2
+00:00:11.036 --> 00:00:25.991
+A broken electronics cart blocks a ramp. Repair Route preserves the original report and suggests three connections: accessibility. maintenance. and component reuse. A person reviews the suggestions before creating the ticket.
+
+3
+00:00:25.991 --> 00:00:38.819
+The confirmed issue appears in Access Path. An open barrier triggers an illustrative detour through the student centre. The map is fictional. and the interface clearly says the reports are unverified.
+
+4
+00:00:38.819 --> 00:00:48.956
+After resolving the barriers in the issue board. the same route updates to the shorter direct path. This demonstrates the connection between maintenance status and accessibility planning.
+
+5
+00:00:48.956 --> 00:01:00.614
+Lab Loop matches available components to curated student projects. The environment monitor has all three required component types. Other recipes clearly show which parts are missing.
+
+6
+00:01:00.614 --> 00:01:13.346
+Reserving the kit deducts an Arduino. a temperature sensor. and a USB cable. The reservation is recorded. and the interface no longer offers a kit when its required sensor is unavailable.
+
+7
+00:01:13.346 --> 00:01:24.047
+Notice to Action extracts dates and action sentences from a workshop notice. Multiple dates are preserved for review rather than being silently treated as one deadline.
+
+8
+00:01:24.047 --> 00:01:33.922
+After confirmation. the checklist keeps the original source wording. Students can mark tasks complete and move directly to project kits or campus access.
+
+9
+00:01:33.922 --> 00:01:49.156
+Proof Pocket is separate from the campus feed. This synthetic incident note has its email and phone number redacted. Notes stay in tab memory. and exporting is explicit. Other identifying details still require human review.
+
+10
+00:01:49.156 --> 00:02:07.713
+Campus Loop is an open source Student Innovation prototype. Six automated logic tests pass. It uses transparent local rules. not a trained AI model. Campus records stay in browser storage. The working app and source repository are available for judges to explore.

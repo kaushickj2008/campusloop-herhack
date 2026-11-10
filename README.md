@@ -1,5 +1,8 @@
 # CampusLoop
 
+[Live application](https://campusloop-herhack.vercel.app) · [Narrated demo](https://campusloop-herhack.vercel.app/demo.html)
+
+
 An integrated HerHack Student Innovation prototype connecting campus accessibility, maintenance, reusable electronics, notice checklists, and private incident documentation.
 
 ## Run
@@ -32,3 +35,6 @@ Vanilla JavaScript ES modules, semantic HTML, responsive CSS, pure analysis func
 
 ## Originality and data
 Built for this hackathon task. Demo records and campus geometry are synthetic. No real-world impact metrics or ML accuracy claims are made. Demo inventory contains illustrative parts only.
+
+## Demo video
+The watch page contains an edited walkthrough of actual app screenshots with synthesized narration and English captions. It is not a continuous screen recording. Synthetic data only. The MP4 is hosted on Vercel rather than stored in this repository.

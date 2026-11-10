@@ -3,3 +3,9 @@ dist/
 node_modules/
 .env*
 .vercel
+
+demo-frames/
+*.mp4
+*.aiff
+preview.png
+public/demo-poster.png

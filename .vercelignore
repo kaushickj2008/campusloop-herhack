@@ -2,3 +2,10 @@ node_modules
 .vercel
 .env*
 tests
+
+.git
+demo-frames
+make-demo.py
+campusloop-demo.mp4
+campusloop-demo.srt
+preview.png
