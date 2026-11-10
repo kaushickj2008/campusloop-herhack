@@ -6,6 +6,9 @@ tests
 .git
 demo-frames
 make-demo.py
-campusloop-demo.mp4
+/campusloop-demo.mp4
 campusloop-demo.srt
 preview.png
+
+!public/campusloop-demo.mp4
+!public/demo-poster.png
